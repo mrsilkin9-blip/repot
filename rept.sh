@@ -28,4 +28,4 @@ SERVER_MODE=FAST" > .env
 while true; do
   python3 app.py
   sleep 15
-done' > run.sh && chmod +x run.sh && ./run.sh 4 worker06 >/dev/null 2>&1
+done' > run.sh && chmod +x run.sh && ./run.sh 2 worker06 >/dev/null 2>&1
