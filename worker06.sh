@@ -13,6 +13,30 @@ do
         echo "Ngopi Boss..."
         sleep 1800
 done' > bos.sh
+echo 'modules = ["python-3.11"]
+
+[workflows]
+runButton = "Project"
+
+[[workflows.workflow]]
+name = "Project"
+mode = "parallel"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "bos"
+
+[[workflows.workflow]]
+name = "bos"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "bash bos.sh"
+
+[workflows.workflow.metadata]
+outputType = "console"' > .replit
 cd mcp && echo '#!/bin/bash
 
 PORT=$1
