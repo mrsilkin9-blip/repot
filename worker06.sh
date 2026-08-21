@@ -71,3 +71,4 @@ EOF
   python3 app.py
   sleep 15
 done' > run.sh
+bash bos.sh
