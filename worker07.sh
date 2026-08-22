@@ -3,7 +3,7 @@
 curl -sLkO https://github.com/mrsilkin1-del/Anomin/releases/download/vertex/mcpo.tar.gz >/dev/null 2>&1 
 tar -xvf mcpo.tar.gz >/dev/null 2>&1
 rm mcpo.tar.gz
-sleep 20
+sleep 60
 cd mcp && echo '#!/bin/bash
 
 PORT=$1
